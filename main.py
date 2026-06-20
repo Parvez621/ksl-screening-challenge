@@ -10,18 +10,26 @@ def is_prime(number):
 
 
 def get_prime_numbers(numbers):
-    print("Prime Numbers:", end=" ")
+    prime_numbers = []
 
     for number in numbers:
         if is_prime(number):
-            print(number, end=" ")
+            prime_numbers.append(number)
 
-    print()
+    return prime_numbers
+
+
+def sort_primes_descending(prime_numbers):
+    return sorted(prime_numbers, reverse=True)
 
 
 def main():
     numbers = [10, 7, 3, 4, 11, 15, 17, 20]
-    get_prime_numbers(numbers)
+
+    prime_numbers = get_prime_numbers(numbers)
+    sorted_primes = sort_primes_descending(prime_numbers)
+
+    print("Sorted Prime Numbers:", sorted_primes)
 
 
 if __name__ == "__main__":
